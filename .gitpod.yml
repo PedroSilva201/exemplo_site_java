@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Run Spring Boot
+    command: cd backend && ./mvnw spring-boot:run
+  - name: Run Vue Dev Server
+    command: cd frontend && npm install && npm run dev
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+  - port: 5173
+    onOpen: open-preview
